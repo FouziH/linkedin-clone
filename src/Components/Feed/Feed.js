@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../Feed/Feed.css";
 import CreateIcon from "@material-ui/icons/Create";
 import InputOption from "../InputOption/InputOption";
@@ -7,10 +7,27 @@ import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
 import EventNoteIcon from "@material-ui/icons/EventNote";
 import CalenderViewDayIcon from '@material-ui/icons/CalendarViewDay'
 import Post from "../Post/Post";
-import { useState } from "react";
+import { db } from "../Firebase/Firebase";
+
 
 function Feed() {
   const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    db.collection('posts').onSnapshot(snapshot => (
+      setPosts(snapshot.docs.map(doc  =>(
+        {
+          id: doc.id,
+          data: doc.data()
+        }
+      )))
+    ))
+  }, [])
+
+  const sendPost = (e) => {
+    e.preventDefault();
+
+  }
   return (
     <div className="feed">
       <div className="feed_inputContainer">
@@ -18,7 +35,7 @@ function Feed() {
           <CreateIcon />
           <form>
             <input type="text" />
-            <button type="submit">Send</button>
+            <button  onClick={sendPost} type="submit">Send</button>
           </form>
         </div>
         <div className="feed_inputOptions">
