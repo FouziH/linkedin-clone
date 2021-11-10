@@ -13,6 +13,9 @@ function Feed() {
                     <button type="submit">Send</button>
                 </form>
                 </div>
+                <div className="feed_inputOption">
+
+                </div>
 
             </div>
             
