@@ -1,12 +1,23 @@
-import React from 'react'
-import"../Post/Post.css"
+import { Avatar } from "@material-ui/core";
+import React from "react";
+import "../Post/Post.css";
 
-function Post() {
-    return (
-        <div className="post">
-            
+function Post({ name, description, message, photoUrl }) {
+  return (
+    <div className="post">
+      <div className="post_header">
+        <Avatar />
+        <div className="post_info">
+          <h2>Hamza Mohamed</h2>
+          <p>Description</p>
         </div>
-    )
+      </div>
+      <div className="post_body">
+         {message? message : <p>Message goes here</p>
+
+      </div>
+    </div>
+  );
 }
 
-export default Post
+export default Post;

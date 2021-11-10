@@ -18,7 +18,7 @@ function Sidebar() {
           src="https://images.ctfassets.net/7thvzrs93dvf/wpImage18643/2f45c72db7876d2f40623a8b09a88b17/linkedin-default-background-cover-photo-1.png?w=790&h=196&q=90&fm=png"
           alt=""
         />
-        <Avatar className="sidebar_avatar" />
+        <Avatar className="sidebar_avatar" src="https://media-exp1.licdn.com/dms/image/C4E03AQFxrSKbAn40Jg/profile-displayphoto-shrink_200_200/0/1628100367659?e=1642032000&v=beta&t=x9uviEmqeHkBvIimk0r672LqLj4ycywIr_JSyTMdqyA"/>
         <h2>Hamza A Mohamed</h2>
         <h4>Hamzafowzi1@gmail.com</h4>
       </div>
