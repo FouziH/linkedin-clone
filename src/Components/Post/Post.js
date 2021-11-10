@@ -13,7 +13,7 @@ function Post({ name, description, message, photoUrl }) {
         </div>
       </div>
       <div className="post_body">
-         {message? message : <p>Message goes here</p>
+         {message? message : <p>Message goes here</p>}
 
       </div>
     </div>
