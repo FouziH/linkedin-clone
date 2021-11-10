@@ -4,7 +4,7 @@ import '../InputOption/InputOption.css'
 function InputOption({Icon, title, color}) {
     return (
         <div className="inputOption">
-            <Icon stye={{color: color}}/>
+            <Icon style={{color: `${color}`}}/>
             <h4>{title}</h4>
 
         </div>
