@@ -14,6 +14,8 @@ function Feed() {
                 </form>
                 </div>
                 <div className="feed_inputOption">
+                    {/* Input options */}
+                    <InputOption />
 
                 </div>
 
