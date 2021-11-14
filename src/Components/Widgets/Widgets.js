@@ -6,7 +6,7 @@ import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord"
 function Widgets() {
 
     const newsArticles  =(heading, subtitle) => {
-        return <div className="widgets_articles">
+        return <div className="widgets_article">
             <div className="widgets_articlesLeft">
                 <FiberManualRecordIcon />
             </div>
