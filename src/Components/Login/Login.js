@@ -4,7 +4,7 @@ import "../Login/Login.css";
 
 export default function Login() {
     const [name, setName] = useState('')
-    const [photoURL, setPhotoURL] = useState('')
+    const [profilePic, setProfilePic] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const login = (e) => {
@@ -20,7 +20,7 @@ export default function Login() {
       <img src="https://cdn.worldvectorlogo.com/logos/linkedin.svg" alt="" />
       <form>
         <input placeholder="Full name (required if registering" type="text" value={name} onChange={(e) => setName(e.target.value)}  required/>
-        <input placeholder="Profile pic URL (Optional)" value={photoURL} onChange={(e) => setPhotoURL(e.target.value)}/>
+        <input placeholder="Profile pic URL (Optional)" value={profilePic} onChange={(e) => setProfilePic(e.target.value)}/>
         <input placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}  required/>
         <input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         <button type="submit" onClick={login }>Sing in</button>
