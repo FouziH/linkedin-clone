@@ -30,7 +30,7 @@ export const userSlice = createSlice({
   reducers: {
    login: (state, action) => {
      
-      state.value = action.payload;
+      state.user = action.payload;
     },
     //when users logs out set the user back to null
     logout: (state) => {
