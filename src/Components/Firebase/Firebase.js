@@ -1,8 +1,9 @@
-import { initializeApp } from "firebase/app";
-import {getFirestore} from '@firebase/firestore'
-import {getAuth} from 'firebase/auth'
+import firebase from 'firebase'
+
+
+
 const firebaseConfig = {
-   apiKey: process.env.API_KEY,
+   apiKey:"AIzaSyB7XjkEkTJbtRifXm-CDk7FExc-zDvGwIU",
   authDomain: "linkedcloneapp.firebaseapp.com",
   projectId: "linkedcloneapp",
   storageBucket: "linkedcloneapp.appspot.com",
@@ -10,13 +11,10 @@ const firebaseConfig = {
   appId: "1:999135260972:web:fa8f8f62144e65e04a3c89",
   measurementId: "G-0SVYX4VMGW"
 };
+const firebaseApp = firebase.initializeApp(firebaseConfig)
 
-const app = initializeApp(firebaseConfig)
-
-const auth = getAuth(app)
-
-
-const db = getFirestore(app);
+const db = firebaseApp.firestore()
+const auth = firebase.auth()
 
 export {db, auth}
 

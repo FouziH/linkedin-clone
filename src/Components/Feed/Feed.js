@@ -8,7 +8,6 @@ import EventNoteIcon from "@material-ui/icons/EventNote";
 import CalenderViewDayIcon from '@material-ui/icons/CalendarViewDay'
 import Post from "../Post/Post";
 import { db } from "../Firebase/Firebase";
-import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc} from "firebase/firestore";
 import firebase from 'firebase'
 
 
