@@ -9,6 +9,7 @@ import Login from "./Components/Login/Login";
 import { auth } from "./Components/Firebase/Firebase";
 import { useDispatch } from "react-redux";
 import { logout, login } from "./features/userSlice";
+import Widgets from "./Components/Widgets/Widgets";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <div className="app_body">
           <Sidebar />
           <Feed />
+          <Widgets />
         </div>
       )}
 
