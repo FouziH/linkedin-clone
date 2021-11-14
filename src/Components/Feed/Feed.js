@@ -8,14 +8,17 @@ import EventNoteIcon from "@material-ui/icons/EventNote";
 import CalenderViewDayIcon from '@material-ui/icons/CalendarViewDay'
 import Post from "../Post/Post";
 import { db } from "../Firebase/Firebase";
+import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc} from "firebase/firestore";
+import firebase from 'firebase'
 
 
 function Feed() {
+  const [input, setInput] = useState("")
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
     db.collection('posts').onSnapshot(snapshot => (
-      setPosts(snapshot.docs.map(doc  =>(
+      setPosts(snapshot.docs.map((doc) =>(
         {
           id: doc.id,
           data: doc.data()
@@ -26,6 +29,13 @@ function Feed() {
 
   const sendPost = (e) => {
     e.preventDefault();
+    db.collection('posts').add({
+      name: "Hamza Mohamed",
+      description: "This is a test", 
+      message: input,
+      photoUrl:"", 
+      timeStamp: firebase.firestore.FieldValue.serverTimestamp()
+    })
 
   }
   return (
@@ -34,7 +44,7 @@ function Feed() {
         <div className="feed_input">
           <CreateIcon />
           <form>
-            <input type="text" />
+            <input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
             <button  onClick={sendPost} type="submit">Send</button>
           </form>
         </div>
