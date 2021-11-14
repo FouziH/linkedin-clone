@@ -1,5 +1,6 @@
 import React from 'react'
 import "../Widgets/Widgets.css"
+import InfoIcon from "@material-ui/icons/Info"
 
 function Widgets() {
     return (
@@ -7,7 +8,6 @@ function Widgets() {
            <div className="widget_header">
                <h2>LinkedIn News</h2>
                <InfoIcon />
-
            </div>
             
         </div>
