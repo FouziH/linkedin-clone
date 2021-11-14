@@ -10,8 +10,11 @@ import NotificationsIcon from '@material-ui/icons/Notifications'
 import { useDispatch } from 'react-redux';
 import { logout } from '../../features/userSlice';
 import { auth } from '../Firebase/Firebase';
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
 function Header() {
     const dispatch = useDispatch()
+    const user = useSelector(selectUser)
 
     const logoutOfApp = () => {
         dispatch(logout())
@@ -21,7 +24,7 @@ function Header() {
     return (
         <div className="header"> 
             <div className="header_left">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt=""/>
+                <img src={"https://cdn-icons-png.flaticon.com/512/174/174857.png"} alt=""/>
                 <div className="header_search">
                     {/* SeatchIcon */}
                     <SearchIcon />
@@ -36,7 +39,9 @@ function Header() {
                 <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/>
                 <HeaderOption Icon={ChatIcon} title="Messaging"/>
                 <HeaderOption Icon={NotificationsIcon} title="Home"/>
-                <HeaderOption avatar="https://media-exp1.licdn.com/dms/image/C4E03AQFxrSKbAn40Jg/profile-displayphoto-shrink_200_200/0/1628100367659?e=1642032000&v=beta&t=x9uviEmqeHkBvIimk0r672LqLj4ycywIr_JSyTMdqyA" title="Me" onClick={logoutOfApp} />
+                <HeaderOption avatar={
+                    user.photoUrl
+                } title="Me" onClick={logoutOfApp} />
 
 
             </div>

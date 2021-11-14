@@ -21,7 +21,7 @@ function Sidebar() {
           src="https://images.ctfassets.net/7thvzrs93dvf/wpImage18643/2f45c72db7876d2f40623a8b09a88b17/linkedin-default-background-cover-photo-1.png?w=790&h=196&q=90&fm=png"
           alt=""
         />
-        <Avatar className="sidebar_avatar" src={user.photoUrl}/>
+        <Avatar className="sidebar_avatar" src={user.photoUrl}>{user.email[0][1]}</Avatar>
         <h2>{user.displayName}</h2>
         <h4>{user.email}</h4>
       </div>
