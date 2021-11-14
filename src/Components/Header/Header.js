@@ -40,7 +40,7 @@ function Header() {
                 <HeaderOption Icon={ChatIcon} title="Messaging"/>
                 <HeaderOption Icon={NotificationsIcon} title="Home"/>
                 <HeaderOption avatar={
-                    user.photoUrl
+                    user?.photoUrl
                 } title="Me" onClick={logoutOfApp} />
 
 
