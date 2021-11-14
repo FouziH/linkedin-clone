@@ -12,8 +12,8 @@ export default function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const login = (e) => {
-        e.preventDefault()
+    const loginToApp = (event) => {
+     event.preventDefault();
       
 
     }
@@ -21,7 +21,7 @@ export default function Login() {
         if(!name) {
             return alert("Please enter a full name!")
         }
-        auth.createUserWithEmailAndPassword(email, password).then(userAuth =>  {
+        auth.createUserWithEmailAndPassword(email, password).then((userAuth) =>  {
             userAuth.user.updateProfile({
                 displayName: name,
                 photoURL: profilePic
@@ -46,7 +46,7 @@ export default function Login() {
         <input placeholder="Profile pic URL (Optional)" value={profilePic} onChange={(e) => setProfilePic(e.target.value)}/>
         <input placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}  required/>
         <input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit" onClick={login }>Sing in</button>
+        <button type="submit" onClick={loginToApp}>Sing in</button>
       </form>
 
       <p>Not a member? {" "}
