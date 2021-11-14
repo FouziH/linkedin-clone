@@ -5,7 +5,7 @@ import InfoIcon from "@material-ui/icons/Info"
 function Widgets() {
     return (
         <div className="widgets">
-           <div className="widget_header">
+           <div className="widgets_header">
                <h2>LinkedIn News</h2>
                <InfoIcon />
            </div>
