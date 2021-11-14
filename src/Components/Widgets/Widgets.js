@@ -3,8 +3,12 @@ import "../Widgets/Widgets.css"
 
 function Widgets() {
     return (
-        <div>
-            <h1>Hello</h1>
+        <div className="widgets">
+           <div className="widget_header">
+               <h2>LinkedIn News</h2>
+               <InfoIcon />
+
+           </div>
             
         </div>
     )
