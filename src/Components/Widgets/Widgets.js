@@ -22,12 +22,12 @@ function Widgets() {
                <h2>LinkedIn News</h2>
                <InfoIcon />
            </div>
-            {newsArticles("PAPA React is back", "Top news - 9099 readers")}
-             {newsArticles("Coronavirus: UK updates", "Top news - 886 readers")}
-              {newsArticles("Tesla hits new highs", "Cars & Auto - 300 readers")}
+            {newsArticles("Exec's back-to-office", "Top news - 9099 readers")}
+             {newsArticles("Americans quit again", "Top news - 886 readers")}
+              {newsArticles("Corporate giants", "Cars & Auto - 300 readers")}
                {newsArticles("Bitcoin Breaks $22k", "Crypto - 123 readers")}
-                {newsArticles("PAPA React is back", "Top news - 9099 readers")}
-                 {newsArticles("PAPA React is back", "Top news - 9099 readers")}
+                {newsArticles("Flight change", "Top news - 9099 readers")}
+                 {newsArticles("How to write a code", "Top news - 9099 readers")}
         </div>
     )
 }
