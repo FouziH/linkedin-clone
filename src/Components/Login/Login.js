@@ -14,9 +14,17 @@ export default function Login() {
 
     const loginToApp = (event) => {
      event.preventDefault();
-      
+    auth.signInWithEmailAndPassword(email, password).then(userAuth  => {
+        dispatch(login({
+             email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+            profileUrl: userAuth.user.photoUrl
+        }))
+    }).catch((error) => alert(error))
 
-    }
+    }; 
+
     const register = () => {
         if(!name) {
             return alert("Please enter a full name!")
