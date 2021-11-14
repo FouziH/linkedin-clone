@@ -2,6 +2,12 @@ import React from "react";
 import "../Login/Login.css";
 
 export default function Login() {
+    const login = () => {
+
+    }
+    const register = () => {
+
+    }
   return (
     <div className="login">
       <img src="https://cdn.worldvectorlogo.com/logos/linkedin.svg" alt="" />
@@ -10,12 +16,12 @@ export default function Login() {
         <input placeholder="Profile pic URL (Optional)" />
         <input placeholder="Email" type="email" />
         <input placeholder="Password" type="password" />
-        <button type="submit">Sing in</button>
+        <button type="submit" onClick={login }>Sing in</button>
       </form>
 
       <p>Not a member? 
 
-          <span className="login_register">Register Now</span>
+          <span className="login_register" onClick={register}>Register Now</span>
       </p>
     </div>
   );
