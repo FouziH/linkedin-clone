@@ -11,7 +11,7 @@ function Widgets() {
                 <FiberManualRecordIcon />
             </div>
             <div className="widgets_articlesRight">
-                <h1>{heading}</h1>
+                <h4>{heading}</h4>
                 <p>{subtitle}</p>
             </div>
         </div>
