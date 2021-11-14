@@ -36,6 +36,8 @@ function Feed() {
       timeStamp: firebase.firestore.FieldValue.serverTimestamp()
     })
 
+    setInput("")
+
   }
   return (
     <div className="feed">
@@ -55,10 +57,18 @@ function Feed() {
           <InputOption Icon={CalenderViewDayIcon} title="Write article" color="#7FC15E" />
         </div>
       </div>
-      {posts.map((post) => (
-        <Post />
+      {posts.map(({id, data: {name,description, message, photoUrl }}) => (
+        <Post
+          key={id} 
+          name={name}
+          description={description}
+          message={message}
+          photoUrl={photoUrl}
+        
+        />
       ))}
-      <Post name="Hamza A Mohamed" description="This is a test" message="Wow this worked" />
+      
+   
     </div>
   );
 }
