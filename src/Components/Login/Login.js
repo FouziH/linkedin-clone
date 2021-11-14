@@ -1,18 +1,41 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { auth } from "../Firebase/Firebase";
+import { login } from "../../features/userSlice";
 import "../Login/Login.css";
 
+
 export default function Login() {
+    const dispatch = useDispatch()
     const [name, setName] = useState('')
     const [profilePic, setProfilePic] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
     const login = (e) => {
         e.preventDefault()
       
 
     }
     const register = () => {
+        if(!name) {
+            return alert("Please enter a full name!")
+        }
+        auth.createUserWithEmailAndPassword(email, password).then(userAuth =>  {
+            userAuth.user.updateProfile({
+                displayName: name,
+                photoURL: profilePic
+            })
+            .then(() => {
+                dispatch(login({
+                    email: userAuth.user.email,
+                    uid: userAuth.user.uid,
+                    displayName: name, 
+                    photoURL: profilePic
+
+                }))
+            })
+        }).catch(error  => alert(error.message))
 
     }
   return (
