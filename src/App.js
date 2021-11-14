@@ -9,8 +9,6 @@ function App() {
     <div className="app">
      <Header />
 
-
-      {/* Body */}
       <div className="app_body">
         <Sidebar />
         <Feed />
